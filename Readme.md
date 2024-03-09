@@ -8,7 +8,7 @@
 
 **Average Request per Second by Minimum RPS as Benchmark**
 
-![Request Per Second by Percentage](result_avg_rps.png)
+![Request Per Second by Percentage](result_avg_rps_pct.png)
 
 **Full Table**
 
