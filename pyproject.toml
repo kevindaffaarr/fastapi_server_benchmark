@@ -1,0 +1,23 @@
+# uv installation: pip install uv
+# create venv: uv venv
+# compile dependencies: uv pip compile pyproject.toml -o requirements.txt
+# installation: uv pip install -r requirements.txt
+# Install from a requirements.txt file: uv pip sync requirements.txt
+# installation additional package: uv pip install flask
+
+[project]
+name = "fastapi_server_benchmark"
+version = "1.0.0"
+dependencies = [
+    "future",
+    "asyncio",
+    "fastapi",
+    "orjson",
+    "uvicorn[standard]",
+    "gunicorn",
+    "granian",
+    "socketify"
+]
+
+[project.optional-dependencies]
+dev = ["ruff","uv"]

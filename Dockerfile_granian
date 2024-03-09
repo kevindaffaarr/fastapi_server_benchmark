@@ -1,0 +1,18 @@
+#  Use python 3.11 slim image as base
+FROM python:3.11-slim as base
+
+# Create and change to the app directory.
+WORKDIR /
+
+# Copy application dependency manifests to the container image.
+COPY requirements.txt ./
+
+# Install dependencies.
+RUN python -m pip install --upgrade pip
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
+
+# Copy local code to the container image.
+COPY . ./
+
+# Run the web service on container startup.
+CMD exec granian --interface asgi --host 0.0.0.0 --port 8000 --interface asgi --workers 8 --threads 8 --opt --no-log --respawn-failed-workers main:app
