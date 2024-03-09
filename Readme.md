@@ -47,9 +47,6 @@
 |            | Socketify | 319	| 449	| 1027	|1192	|499.63	|174.12	|1384 |
 
 
----
-
-
 # RUNNING THE TEST
 
 ## Docker Command
@@ -73,6 +70,10 @@ docker run --name container_socketify -p 8002:8000 socketify
 ```
 
 ## Load Test Command
+>Install autocannon
+```bash
+npm install autocannon -g
+```
 
 >Run Load Test for Gunicorn
 ```bash
